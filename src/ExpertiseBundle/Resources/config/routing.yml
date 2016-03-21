@@ -1,0 +1,35 @@
+expertise_start:
+    path:      /api/expertise/start
+    defaults:  { _controller: ExpertiseBundle:Expertise:start }
+
+expertise_push:
+    path:      /api/expertise/push
+    defaults:  { _controller: ExpertiseBundle:Expertise:push }
+
+expertise_status:
+    path:      /api/expertise/status
+    defaults:  { _controller: ExpertiseBundle:Expertise:status }
+
+expertise_test:
+    path:      /api/expertise/test
+    defaults:  { _controller: ExpertiseBundle:Expertise:test }
+
+expertise_user_api:
+    resource: "@ExpertiseBundle/Controller/ExpertiseUserRESTController.php"
+    type:   rest
+    prefix:   /api
+
+expertise_status_api:
+    resource: "@ExpertiseBundle/Controller/ExpertiseStatusRESTController.php"
+    type:  rest
+    prefix:   /api
+
+expertise_group_api:
+    resource: "@ExpertiseBundle/Controller/ExpertiseGroupRESTController.php"
+    type:   rest
+    prefix:   /api
+
+expertise_field_api:
+    resource: "@ExpertiseBundle/Controller/ExpertiseFieldRESTController.php"
+    type:   rest
+    prefix:   /api

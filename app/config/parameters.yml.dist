@@ -1,0 +1,34 @@
+# This file is a "template" of what your parameters.yml file should look like
+parameters:
+    database_driver: pdo_pgsql
+    database_host: localhost
+    database_port: ~
+    database_name: null
+    database_user: null
+    database_password: ~
+
+    locale:            en
+
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    rabbit_mq_host: localhost
+    rabbit_mq_user: null
+    rabbit_mq_password: null
+    rabbit_mq_vhost: null
+    rabbit_mq_port: 5672
+
+    graylog.hostname:   localhost
+    graylog.port:       12201
+
+    source_instance: app.stage
+
+    expertise.process_id_front: 33
+    expertise.process_id_group: 38
+    expertise.process_id_user: 37
+    expertise.x_user_id: temp
+
+    expertise.datasorce.groups: "/api/expertgroups"
+    expertise.datasorce.groupsRoutingKey: "storage.api.query"
+
+    app_service:
+        app_auth_verify_host: https://AUTH.HOST/oauth/v2/verify

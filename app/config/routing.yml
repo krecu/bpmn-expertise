@@ -1,0 +1,17 @@
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+expertise:
+    resource: "@ExpertiseBundle/Resources/config/routing.yml"
+    prefix:   /
+
+proxy:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /
+    defaults: { _format: 'json' }

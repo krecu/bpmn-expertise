@@ -1,0 +1,50 @@
+services:
+    kernel.listener.expception_listener:
+        class: AppBundle\EventListener\ExceptionListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    gelf.publisher:
+        class: "Gelf\MessagePublisher"
+        arguments:
+            - %graylog.hostname%
+            - %graylog.port%
+
+    monolog.gelf_handler:
+        class: "Monolog\Handler\GelfHandler"
+        arguments:
+            - @gelf.publisher
+            - 200
+
+    monolog.processor.log_processor:
+        class: Isz\Processor\MonologProcessor
+        arguments:
+            - %source_instance%
+            - %kernel.environment%
+        tags:
+            - { name: monolog.processor, method: __invoke }
+    app.proxy:
+        class: AppBundle\Services\ProxyService
+        arguments:
+            - @service_container
+            - @logger
+            - @snc_redis.default
+
+    app.expertise:
+        class: ExpertiseBundle\Services\ExpertiseService
+        arguments:
+            - @service_container
+            - @logger
+            - @kernel
+
+    app.process:
+        class: ExpertiseBundle\Services\ExpertiseProcess
+        arguments:
+            - @service_container
+            - @logger
+
+    expertise_api.consumer:
+        class: ExpertiseBundle\Consumer\ExpertiseApiConsumer
+        arguments:
+            - @service_container
+            - @logger
