@@ -1,4 +1,4 @@
-ISZ Expertise Service
+BPMN Expertise
 ========================
 
 Построение модели экспертизы c помощью Visual Paradigm 12
@@ -61,21 +61,3 @@ ISZ Expertise Service
 	        - %{expertise.api.pushChildrenUserExpertise} - двинет дочернии процессы, если они будут найдены
 	             - Параметры: 
 	             - Ответ: Запишит в процесс переменую ${expertiseStatus=???}
-	            
-	        
- - GATEWAY 
- - REST
-    
-  Сохранить значение коментария по полю или сущности а так сдвигать процесс
-  - app.isz.gosbook.ru/api/expertise/push?params[id]=19845554-b36d-439f-9546-80c3800733aa&params[op]=saveFieldExpertise&params[commentField]=root&params[commentBody]=autor
-  Запустить эксертизу сущности
-  - app.isz.gosbook.ru/api/expertise/start?groupId=41a0bf0a-b6de-437a-a8cf-3795ba90ba95&entityId=5d62569a-3114-4656-bcb8-c3754d0f60ce&entityType=lot
-  Получить статус документов
-  - app.isz.gosbook.ru/api/docs/expertise/5d62569a-3114-4656-bcb8-c3754d0f60ce
- 
- 
- 
-
-
--------------------------------------
-REST Api серсив не прендназначен для прямого взаимодействия по ресту, но тем неменее имеет интерфейс
