@@ -22,8 +22,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "misd/guzzle-bundle": "~1.1",
         "mlehner/gelf-php": "v1.0",
-        "dbatishchev/isz-log-processor": "dev-master",
-        "dbatishchev/rabbitmq-bundle": "dev-master",
+        "php-amqplib/rabbitmq-bundle": "dev-master",
         "nelmio/cors-bundle": "~1.4",
         "snc/redis-bundle": "1.1.x-dev",
         "predis/predis": "~1.0",
@@ -73,15 +72,5 @@
         "branch-alias": {
             "dev-master": "2.7-dev"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "ssh://git@gitlab.gblab.ru:6056/d.batishev/isz-rabbitmq-bundle.git"
-        },
-        {
-            "type": "vcs",
-            "url":  "ssh://git@gitlab.gblab.ru:6056/d.batishev/isz-log-processor.git"
-        }
-    ]
+    }
 }
